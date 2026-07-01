@@ -1,0 +1,12 @@
+CC=gcc
+CFLAGS=-O2 -Wall -Wextra
+LIBS=-lnvidia-ml
+TARGET=mint-afterburner-cli
+
+all: $(TARGET)
+
+$(TARGET): mian2.c
+	$(CC) $(CFLAGS) mian2.c -o $(TARGET) $(LIBS)
+
+clean:
+	rm -f $(TARGET)
