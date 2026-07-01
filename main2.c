@@ -10,7 +10,6 @@
  * 
  * ANSI escape sequences for terminal dashboard refresh
  */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -18,15 +17,12 @@
 #include <time.h>
 #include <signal.h>
 #include <stdarg.h>
-
 #include <nvml.h>
-
 /* Constants */
 #define MAX_DEVICES 64
 #define BUFFER_SIZE 256
 #define DASHBOARD_REFRESH "\033[H\033[J"
 #define CURSOR_HOME "\033[H"
-
 /* Global state */
 static volatile sig_atomic_t running = 1;
 static int interval = 1;
@@ -118,7 +114,6 @@ static int get_gpu_metrics(unsigned int device_index, char *output, size_t outpu
     unsigned int clock_core, clock_mem;
     size_t pos = 0;
     int written;
-    
     /* Get device name */
     result = nvmlDeviceGetName(device, device_name, sizeof(device_name));
     if (result != NVML_SUCCESS) {
